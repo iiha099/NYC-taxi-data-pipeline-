@@ -4,28 +4,48 @@ The pipeline ingests NYC Yellow Taxi trip data, validates and cleans the data, c
 All PySpark transformation tests passed successfully (15/15).
 
 🏗️ Architecture
-NYC Yellow Taxi Data 
-        ↓ 
-Data Ingestion 
-		↓
-Schema Validation 
-		↓
-Google Cloud Storage - Raw Layer 
-		↓ 
+NYC Yellow Taxi Data
+        |
+        v
+Data Ingestion
+        |
+        v
+Schema Validation
+        |
+        v
+GCS - Raw Layer
+        |
+        v
 PySpark Cleaning & Transformation
-		↓ 
-Google Cloud Storage - Staging Layer 
-		↓ 
+        |
+        v
+GCS - Staging Layer
+        |
+        v
 Data Processing
-	↙       ↘
-Analytics      ML Dataset
-					↓ 
-			Model Training 
-					↓
-			Model Storage
-Apache Airflow orchestrates the complete pipeline. Spark workloads are executed on Google Cloud Dataproc.
+     /       \
+    v         v
+Analytics   ML Dataset
+              |
+              v
+        Model Training
+              |
+              v
+        Model Storage
 
-✅ Project Results
+🛠️ Technologies
+- Python
+- PySpark
+-  Apache Spark
+- Apache Airflow
+- Google Cloud Storage
+- Google Cloud Dataproc
+- Docker
+- Pytest
+- Git
+
+  
+✅ Results
 -Built and executed the complete end-to-end data pipeline
 -Processed NYC Yellow Taxi Parquet data using PySpark
 -Implemented Raw, Staging, and Processed data layers
@@ -34,3 +54,4 @@ Apache Airflow orchestrates the complete pipeline. Spark workloads are executed 
 -Orchestrated the pipeline using Apache Airflow
 -Implemented automated PySpark tests
 -15/15 tests passed successfully
+
